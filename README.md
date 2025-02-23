@@ -70,4 +70,4 @@ docker-compose up --build
 
 
 ## **実装時間**
-4時間
+4時間30分
