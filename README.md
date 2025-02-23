@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PokéAPI ポケモン一覧検索アプリ
 
-## Getting Started
+このアプリは、[PokéAPI](https://pokeapi.co/)から初代151匹のポケモンデータを取得し、検索機能でフィルタリング可能な一覧ページです。
 
-First, run the development server:
+
+## 使用技術
+- Next.js 
+- Tailwind CSS
+- PokéAPI (https://pokeapi.co/)
+
+## セットアップ方法
+
+### 1. Next.js プロジェクトの作成
+
+```bash
+npx create-next-app@latest [プロジェクト名]
+```
+
+### 2. 必要パッケージのインストール
+
+```bash
+npm install
+```
+
+### 3. Tailwind CSSの設定
+#### 3-1. Tailwind CSSのインストール
+
+```bash
+npm install -D tailwindcss postcss autoprefixer
+```
+
+#### 3-2. Tailwind CSSの初期設定ファイルの作成、コンテンツパスの設定
+
+```bash
+npx tailwindcss init
+```
+
+#### 3-3. コンテンツパスの設定
+`tailwind.config.js` 内で、Tailwind CSS が適用対象とするファイルのパスを設定します。
+
+#### 3-4. CSSにディレクティブを追加
+
+`styles/globals.css` に Tailwind CSS のディレクティブを追加します。
+
+```bash
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+## 4. 開発サーバーの起動
+開発サーバーの起動し、ブラウザで http://localhost:3000 を開いて動作確認を行います。
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 5. Dockerを用いた起動手順
+### 5-1. Dockerfile, docker-compose.ymlの作成
+プロジェクトのルートディレクトリ内に、`Dockerfile` と `docker-compose.yml` を作成します。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 5-2. DockerDesktopを起動
+Docker Desktopを起動し、ターミナルで以下のコマンドを実行します。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+docker-compose up --build
+```
 
-## Learn More
+### 5-3. ブラウザで動作確認
+ブラウザで http://localhost:3000 を開いて動作確認を行います。
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## **実装時間**
+4時間
