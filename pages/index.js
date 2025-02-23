@@ -23,12 +23,15 @@ export default function Home({ pokemonList}) {
                     placeholder="ポケモン検索..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    className="w-full p-2 mb-4 border border-gray-300"
+                    className="w-full p-2 mb-4 border border-blue-300 rounded-md focus:outline-none focus:border-blue-700 bg-blue-50"
                 />
                 {/* ポケモン一覧 */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     {filteredPokemon.map((pokemon, idx) => (
-                        <div key={idx} className="bg-white p-4 rounded shadow-md">
+                        <div 
+                            key={idx}
+                            className="p-4 rounded-md shadow-md bg-gradient-to-br from-gray-200 to-gray-400"
+                        >
                             <h2 className="trxt-lg font-semibold" capitalize>{pokemon.name}</h2>
                         </div>
                     ))}

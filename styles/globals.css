@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.custom-input {
+    background-color: #eff6ff; /* Tailwind の blue-50 と近い色 */
+    border: 2px solid #3b82f6; /* blue-500 */
+}
