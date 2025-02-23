@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    # ホスト側の変更をコンテナ内に反映
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run dev
